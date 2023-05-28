@@ -1,0 +1,26 @@
+# пример использования pre-commit-hooks
+# установить последнюю версию
+# pre-commit install -f
+# обработать все файлы в проекте
+# pre-commit run --all-files
+
+exclude: (_mock.go|mocks/.*\.go|.pb.go|.pb.gw.go|.pb.goclay.go|swagger.go|.swagger.json)$
+
+fail_fast: false
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-merge-conflict
+
+  - repo: https://github.com/Worldbug/go-pre-commit-hooks
+    rev: v0.0.1
+    hooks:
+      - id: go-imports
+      - id: go-gofumpt
+      - id: golangci-lint
+        args: [ --config=.golangci.pipeline.yaml ] # optional

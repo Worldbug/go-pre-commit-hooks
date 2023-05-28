@@ -1,0 +1,34 @@
+- id: go-fmt
+  name: 'go fmt'
+  entry: run-go-fmt.sh
+  files: '\.go$'
+  language: 'script'
+  description: "Runs `gofmt`, requires golang"
+
+- id: go-gofumpt
+  name: 'go gofumpt'
+  entry: run-go-gofumpt.sh
+  files: '\.go$'
+  language: 'script'
+  description: "Runs `gofumpt`, requires golang and gofumpt (`go install mvdan.cc/gofumpt@latest`)"
+
+- id: go-imports
+  name: 'go imports'
+  entry: run-go-imports.sh
+  files: '\.go$'
+  language: 'script'
+  description: "Runs `goimports`, requires golang"
+
+- id: go-static-check
+  name: "go staticcheck"
+  entry: run-go-static-check.sh
+  files: '\.go$'
+  language: "script"
+  description: "Runs `staticcheck`, install https://staticcheck.io/docs/"
+
+- id: golangci-lint
+  name: "go golangci-lint"
+  entry: run-golangci-lint.sh
+  files: '\.go$'
+  language: "script"
+  description: "Runs `golangci-lint`, install https://github.com/golangci/golangci-lint"

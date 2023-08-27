@@ -2,8 +2,8 @@
 
 set -e -o pipefail
 
-if ! command -v gofumpt &> /dev/null ; then
-    echo "gofumpt not installed or available in the PATH" >&2
+if ! command -v swag &> /dev/null ; then
+    echo "swag not installed or available in the PATH" >&2
     exit 1
 fi
 

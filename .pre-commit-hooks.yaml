@@ -12,6 +12,13 @@
   language: 'script'
   description: "Runs `gofumpt`, requires golang and gofumpt (`go install mvdan.cc/gofumpt@latest`)"
 
+- id: go-swag-fmt
+  name: 'swag fmt'
+  entry: run-swag-fmt.sh
+  files: '\.go$'
+  language: 'script'
+  description: "Runs `swag fmt ./...`, requires golang and swag (`go install github.com/swaggo/swag/cmd/swag@latest`)"
+
 - id: go-imports
   name: 'go imports'
   entry: run-go-imports.sh
